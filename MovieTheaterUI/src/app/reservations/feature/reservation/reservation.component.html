@@ -1,0 +1,30 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+    <div>
+        <h3>Id:</h3>
+        <p>{{reservation?.id}}</p>
+    </div>
+    <div>
+        <h3>Screening Id:</h3>
+        <a class="link" routerLink="/admin/screenings/{{reservation?.screeningId}}">{{reservation?.screeningId}}</a>
+    </div>
+    <div>
+        <h3>User Id:</h3>
+        <p>{{reservation?.userId}}</p>
+    </div>
+    <div>
+        <h3>Paid:</h3>
+        <p>{{reservation?.paid}}</p>
+    </div>
+    <div>
+        <h3>Reserved Seats:</h3>
+        <div *ngFor="let seat of reservedSeats">
+            <div>
+                <span>Row: {{seat?.row}} Number: {{seat?.number}}</span>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="reservation?.paid">
+        <button (click)="onSendEmail()" class="action-button" mat-raised-button color="warn">Send tickets</button>
+    </div>
+</div>

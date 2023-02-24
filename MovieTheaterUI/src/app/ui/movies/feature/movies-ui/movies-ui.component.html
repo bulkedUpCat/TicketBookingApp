@@ -1,0 +1,79 @@
+<app-navbar-ui></app-navbar-ui>
+
+<div class="container">
+    <div class="dropdowns">
+        <div class="dropdown">
+            <button class="dropdown-btn">Genres</button>
+            <div class="dropdown-menu">
+                <ul>
+                    <li *ngFor="let genre of genres">
+                        <label for="{{genre?.name}}">{{genre?.name}}</label>
+                        <input id="{{genre?.name}}" [checked]="filter.genres.includes(genre?.name)" type="checkbox" (change)="onGenreChangeFilter($event, genre)">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropdown-btn">Runtime (min minutes)</button>
+            <div class="dropdown-menu">
+                <ul>
+                    <li *ngFor="let runtime of durationOptions">
+                        <label for="{{runtime}}">{{runtime}}</label>
+                        <input id="{{runtime}}" [checked]="filter.runtime.includes(runtime.toString())" type="checkbox" (change)="onRuntimeFilterChange($event, runtime)">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropdown-btn">Countries</button>
+            <div class="dropdown-menu">
+                <ul>
+                    <li *ngFor="let country of countries">
+                        <label for="{{country.name}}">{{country.name}}</label>
+                        <input id="{{country.name}}" [checked]="filter.countries.includes(country.name)" type="checkbox" (change)="onCountryFilterChange($event, country)">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropdown-btn">Companies</button>
+            <div class="dropdown-menu">
+                <ul>
+                    <li *ngFor="let company of productionCompanies">
+                        <label for="{{company?.name}}">{{company?.name}}</label>
+                        <input id="{{company?.name}}" [checked]="this.filter.companies.includes(company?.name)" type="checkbox" (change)="onProductionCompanyChange($event, company)">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropdown-btn">Sort</button>
+            <div class="dropdown-menu">
+                <ul>
+                    <li *ngFor="let option of sortingOptions" (dblclick)="onResetSort()">
+                        <label for="{{option}}">{{option}}</label>
+                        <input id="{{option}}" [checked]="filter.sortingOption == option" name="sort" type="radio" (change)="onSortingOptionChange($event, option)">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="search">
+        <input type="text" [(ngModel)]="searchString">
+        <button (click)="onSearch(searchString)">Search</button>
+    </div>
+    <div class="report">
+        <button class="print" (click)="onPrintMovies()"><i class="bx bx-printer"></i></button>
+        <button class="send" *ngIf="authService.loggedIn.value" (click)="onSendEmailReport()"><i class="bx bx-envelope"></i></button>
+    </div>
+    <div class="movie-list">
+        <div *ngFor="let movie of movies" class="movie" routerLink="/movies/{{movie?.id}}">
+            <div class="img-box">
+                <img [src]="movie?.poster" alt="Movie poster">
+            </div>
+            <p>{{movie?.title}}</p>
+        </div>
+    </div>
+</div>
+
+<app-scroll-bar-ui></app-scroll-bar-ui>

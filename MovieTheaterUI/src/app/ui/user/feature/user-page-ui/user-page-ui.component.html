@@ -1,0 +1,31 @@
+<app-navbar-ui></app-navbar-ui>
+<div class="container">
+    <p *ngIf="reservations && reservations.length != 0" class="res-list">Your reservations:</p>
+    <!-- <div class="flex-container">
+        <div class="reservations">
+            <div class="reservation" *ngFor="let reservation of reservations">
+                <p (click)="getReservedSeatsByReservationId(reservation?.id)">{{reservation?.screening?.movieTitle}} --- {{reservation?.screening?.start | date: 'short'}} ({{reservation?.status}})</p>
+            </div>
+        </div>
+        <div class="displayed-reserved-seats">
+            <div *ngFor="let seat of displayedReservedSeats">
+                <p>Row: {{seat?.row}}</p>
+                <p>Number: {{seat?.number}}</p>
+            </div>
+        </div>
+    </div> -->
+    <div *ngFor="let reservation of reservations">
+        <p>{{reservation.screening?.movieTitle}} --- {{reservation.screening?.start | date: 'short'}}
+            <button *ngIf="!reservation.paid" class="btn" (click)="onCancelReservation(reservation.id)">Cancel</button>
+            <button class="btn print" (click)="onPrintReservation(reservation.id)"><i class="bx bx-printer"></i></button>
+            <button class="btn send" (click)="onSendTickets(reservation.id)"><i class="bx bx-envelope"></i></button>
+        </p>
+        <div class="ticket-container">
+            <app-ticket-ui class="card" *ngFor="let seat of reservation.seats" [seat]="seat" [screening]="reservation.screening" [hall]="reservation.screening?.hall" [movie]="reservation.screening?.movie">
+            </app-ticket-ui>
+        </div>
+    </div>
+
+</div>
+
+<app-scroll-bar-ui></app-scroll-bar-ui>

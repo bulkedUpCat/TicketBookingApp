@@ -1,0 +1,32 @@
+<div class="container">
+    <form [formGroup]="loginForm" (submit)="onLogin()">
+        <div class="login-text">
+            Log in
+        </div>
+        <div class="input">
+            <input type="text" class="input-item" placeholder="Enter your email" formControlName="email">
+            <div class="error" *ngIf="submitted && email.errors">
+                <div class="error" *ngIf="email.errors['required']">
+                    Email is required
+                </div>
+            </div>
+        </div>
+        <div class="input">
+            <input type="password" class="input-item" placeholder="Enter your password" formControlName="password">
+            <div class="error" *ngIf="submitted && password.errors">
+                <div class="error" *ngIf="password.errors['required']">
+                    Password is required
+                </div>
+            </div>
+        </div>
+        <div class="btn">
+            <button type="submit">
+              Log in
+            </button>
+        </div>
+        <div class="links">
+            <a routerLink="/auth/signup">Don't have an account yet?</a><br>
+            <a routerLink="">Home</a>
+        </div>
+    </form>
+</div>

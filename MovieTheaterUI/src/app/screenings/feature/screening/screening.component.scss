@@ -1,0 +1,38 @@
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 5%;
+    margin: 1%;
+}
+
+.container {
+    display: grid;
+    width: 50%;
+}
+
+.link {
+    margin: 1%;
+    color: #e70634;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.action-button {
+    margin: 1%;
+}
+
+.header {
+    background-color: #fff;
+    margin: auto auto;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.header h1 {
+    text-align: center;
+    font-size: 2rem;
+    padding: 2%;
+    color: #000;
+}

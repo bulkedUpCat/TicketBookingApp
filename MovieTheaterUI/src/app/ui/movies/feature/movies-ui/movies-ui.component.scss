@@ -1,0 +1,140 @@
+.container {
+    margin-top: 5%;
+}
+
+.dropdowns {
+    display: flex;
+    margin-bottom: 40px;
+}
+
+.dropdown {
+    position: relative;
+    width: 300px;
+}
+
+.dropdown-btn {
+    width: 100%;
+    color: #e70634;
+    margin-right: 5px;
+    background-color: #ffffff09;
+    border: 1px solid #ffffff2c;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all ease 0.3s;
+    padding: 5px;
+}
+
+.dropdown-btn:hover {
+    background-color: #e70634;
+    color: #FFF;
+    transition: all ease 0.3s;
+}
+
+.dropdown-menu li {
+    width: 100%;
+    display: flex;
+    margin-bottom: 5px;
+    justify-content: space-between;
+}
+
+.dropdown-menu li {
+    width: 100%;
+    color: #000;
+    background-color: #ffffff;
+    border: 1px solid #ffffff2c;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all ease 0.3s;
+    padding: 5px;
+}
+
+.dropdown-menu li:hover {
+    background-color: #e70634;
+    color: #FFF;
+    transition: all ease 0.3s;
+}
+
+.dropdown-menu li label {
+    flex: 1;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    position: absolute;
+    display: none;
+    width: 100%;
+    padding: .75rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .1);
+    transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.movie-list {
+    margin: 5%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 5%;
+    text-align: center;
+}
+
+.movie {
+    cursor: pointer;
+}
+
+.movie .img-box {
+    width: 100%;
+    height: 300px;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.img-box img:hover {
+    // transform: translateY(-10px);
+    // transition: 0.2s all linear;
+    cursor: pointer;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+}
+
+.search input {
+    padding: 5px;
+}
+
+.search button {
+    background-color: #e70634;
+    color: #fff;
+    padding: .7%;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.report {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.report button.print {
+    background-color: rgb(16, 186, 243);
+    color: #fff;
+    padding: .5%;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.report button.send {
+    background-color: #0c7306;
+    color: #fff;
+    padding: .5%;
+    cursor: pointer;
+}

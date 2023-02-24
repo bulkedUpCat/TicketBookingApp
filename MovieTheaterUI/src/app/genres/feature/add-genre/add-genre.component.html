@@ -1,0 +1,13 @@
+<form class="container" (submit)="onSubmit()" [formGroup]="genreForm">
+
+    <mat-form-field class="field" appearance="fill">
+        <mat-label>Enter the name</mat-label>
+        <input matInput formControlName="name">
+    </mat-form-field>
+
+    <div style="text-align: center">
+        <button class="reset-btn" mat-raised-button type="reset">Reset</button>
+        <button class="submit-btn" mat-raised-button type="submit">Submit</button>
+    </div>
+
+</form>

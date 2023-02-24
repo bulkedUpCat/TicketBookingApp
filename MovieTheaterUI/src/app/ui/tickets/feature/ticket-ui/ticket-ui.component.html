@@ -1,0 +1,36 @@
+<div class="ticket">
+    <div class="holes-top"></div>
+    <div class="title">
+        <p class="cinema">CINEMA PRESENTS</p>
+        <p class="movie-title">{{movie?.title}}</p>
+    </div>
+    <div class="poster">
+        <img [src]="movie?.poster" alt="{{movie?.title}}" />
+    </div>
+    <div class="info">
+        <table>
+            <tr>
+                <th>HALL</th>
+                <th>ROW</th>
+                <th>SEAT</th>
+            </tr>
+            <tr>
+                <td class="bigger">{{hall?.name}}</td>
+                <td class="bigger">{{seat?.row}}</td>
+                <td class="bigger">{{seat?.number}}</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th>PRICE</th>
+                <th>DATE</th>
+                <th>TIME</th>
+            </tr>
+            <tr>
+                <td>{{screening?.price}}$</td>
+                <td>{{screening?.start | date: 'M/d/yy'}}</td>
+                <td>{{screening?.start | date: 'h:mm a'}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

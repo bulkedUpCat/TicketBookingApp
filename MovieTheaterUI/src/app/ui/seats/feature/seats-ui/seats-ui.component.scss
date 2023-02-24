@@ -1,0 +1,28 @@
+.container {
+    display: grid;
+}
+
+.row-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seat {
+    background-color: #ecec4b;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+}
+
+.seat.selected {
+    background-color: rgb(40, 174, 207)
+}
+
+.seat.occupied {
+    background-color: rgb(255, 0, 0);
+    cursor: default;
+}

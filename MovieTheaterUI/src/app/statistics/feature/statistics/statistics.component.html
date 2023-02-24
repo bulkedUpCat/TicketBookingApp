@@ -1,0 +1,11 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+    <p>Latest movies: (released less than month ago)</p>
+    <div *ngFor="let movie of latestMovies">
+        -<a class="link" routerLink="/admin/movies/{{movie.id}}"> {{movie.title}} </a><span>| {{movie.dateReleased | date: 'YYYY/MM/dd'}}</span>
+    </div>
+    <p>Last chance movies: (last days in the cinema)</p>
+    <div *ngFor="let movie of lastChanceMovies">
+        -<a class="link" routerLink="/admin/movies/{{movie.id}}"> {{movie.title}} </a>
+    </div>
+</div>

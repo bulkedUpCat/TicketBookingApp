@@ -1,0 +1,53 @@
+.container {
+    display: grid;
+}
+
+.row-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seat {
+    background-color: rgb(40, 174, 207);
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+}
+
+.seat.selected {
+    background-color: #ecec4b;
+}
+
+.seat.occupied {
+    background-color: #e70634;
+}
+
+button.booking {
+    padding: 10px 30px;
+    font-size: 1.5rem;
+    background-color: #ffffff09;
+    border: 2px solid #e70634;
+    cursor: pointer;
+    color: #ffffff;
+    letter-spacing: 1px;
+    transition: all ease 0.3s;
+}
+
+button.booking:hover {
+    background-color: #e70634;
+    transition: all ease 0.3s;
+}
+
+.price {
+    margin: .5% 0;
+}
+
+.price p {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}

@@ -1,0 +1,54 @@
+.container {
+    margin-top: 5%;
+}
+
+.ticket-container {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 15px;
+    row-gap: 15px;
+    margin-top: 2%;
+}
+
+p {
+    text-align: center;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reservation {
+    margin-bottom: 5%;
+}
+
+.reservation p {
+    cursor: pointer;
+}
+
+.displayed-reserved-seats {
+    margin-right: 5%;
+}
+
+.res-list {
+    margin-top: 2%;
+}
+
+.btn {
+    cursor: pointer;
+    padding: 1%;
+    background-color: #e70634;
+    color: #fff;
+}
+
+.print {
+    background-color: rgb(16, 186, 243);
+    margin-left: 2%;
+    margin-right: 5px;
+}
+
+.send {
+    background-color: #0c7306;
+}

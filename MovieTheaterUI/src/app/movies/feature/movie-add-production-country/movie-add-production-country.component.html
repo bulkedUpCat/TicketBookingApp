@@ -1,0 +1,7 @@
+<div class="container">
+    <div class="country" *ngFor="let country of countries">
+        <label for="{{country?.name}}">{{country?.name}}</label>
+        <input id="{{country?.name}}" [checked]="checkCountries(country?.name)" type="checkbox" (change)="onCountryChange($event, country.id)">
+    </div>
+    <button class="btn" (click)="onSave()">Save</button>
+</div>

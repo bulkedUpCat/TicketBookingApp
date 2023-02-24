@@ -1,0 +1,50 @@
+<form class="container" (submit)="onSubmit()" [formGroup]="movieForm">
+
+    <mat-form-field class="field" appearance="fill">
+        <mat-label>Enter the title</mat-label>
+        <input matInput formControlName="title">
+    </mat-form-field>
+
+    <mat-form-field class="field" appearance="fill">
+        <mat-label>Enter the description</mat-label>
+        <input matInput formControlName="description">
+    </mat-form-field>
+
+    <mat-form-field class="field" appearance="fill">
+        <mat-label>Enter the duration in minutes</mat-label>
+        <input type="number" matInput formControlName="durationMinutes">
+    </mat-form-field>
+
+    <mat-form-field class="field" appearance="fill">
+        <mat-label>Enter the budget</mat-label>
+        <input type="number" matInput formControlName="budget">
+    </mat-form-field>
+
+    <mat-form-field class="field" appearance="fill">
+        <mat-label>Enter the IMDb rating</mat-label>
+        <input type="number" matInput formControlName="IMDbRating">
+    </mat-form-field>
+
+    <mat-form-field class="field" appearance="fill">
+        <mat-label>Enter the revenue</mat-label>
+        <input type="number" matInput formControlName="revenue">
+    </mat-form-field>
+
+    <mat-form-field class="field" appearance="fill">
+        <mat-label>Enter the poster</mat-label>
+        <input matInput formControlName="poster">
+    </mat-form-field>
+
+    <mat-form-field class="field" appearance="fill">
+        <mat-label>Enter the release date</mat-label>
+        <input matInput [matDatepicker]="datePicker" formControlName="dateReleased">
+        <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+        <mat-datepicker #datePicker></mat-datepicker>
+    </mat-form-field>
+
+    <div style="text-align: center">
+        <button class="reset-btn" mat-raised-button type="reset">Reset</button>
+        <button class="submit-btn" mat-raised-button type="submit">Submit</button>
+    </div>
+
+</form>

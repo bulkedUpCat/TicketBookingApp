@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="header">{{hall?.name}} Hall</div>
+    <div class="movie-title">
+        <p>{{screening?.movieTitle}}</p>
+    </div>
+
+    <div>
+        <p>{{movieLanguage?.name}}</p>
+    </div>
+
+    <div>
+        <p>{{screening?.start | date:'MMM d, h:mm a'}}</p>
+    </div>
+    <div>
+        <app-seats-ui (seatIdEvent)="onToggleSeat($event)" *ngIf="dataLoaded" [hallId]="screening?.hallId" [screeningId]="screening?.id"></app-seats-ui>
+    </div>
+    <div class="booking">
+        <p>Total price: {{totalPrice}} $</p>
+        <button (click)="onBook()">Book</button>
+    </div>
+</div>
+
+<app-scroll-bar-ui></app-scroll-bar-ui>

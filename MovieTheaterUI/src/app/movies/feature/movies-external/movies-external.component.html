@@ -1,0 +1,9 @@
+<app-nav-bar></app-nav-bar>
+<div class="movie-list">
+    <div (click)="openMovieDetails(movie)" *ngFor="let movie of movies" class="movie">
+        <div class="img-box">
+            <img [src]="movie?.poster" alt="Movie poster">
+        </div>
+        <p>{{movie?.title}}</p>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="query">
+    <p>Enter the query</p>
+    <input [(ngModel)]="query" type="text">
+    <button (click)="onExecute(query)">Execute</button>
+</div>
+
+<table *ngIf="queried">
+    <div *ngFor="let i of Object.keys(Object.keys(result)) || []">
+        <br>
+        <div *ngFor="let key of Object.keys(result[i]) || []">
+            <p>{{key}} ---> {{(result[i])[key]}}</p>
+        </div>
+        <br>
+    </div>
+</table>

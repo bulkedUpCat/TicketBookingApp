@@ -1,0 +1,23 @@
+.container {
+    margin: 0 1%;
+    text-align: center;
+}
+
+.container div {
+    margin-bottom: 2%;
+}
+
+.header {
+    background-color: #fff;
+    margin: auto auto;
+    width: 50%;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.header h1 {
+    text-align: center;
+    font-size: 2rem;
+    padding: 2%;
+    color: #000;
+}

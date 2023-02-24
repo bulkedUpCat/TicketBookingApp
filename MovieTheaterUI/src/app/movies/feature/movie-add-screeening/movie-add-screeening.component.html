@@ -1,0 +1,44 @@
+<form class="container" (submit)="onSubmit()" [formGroup]="screeningForm">
+
+    <mat-form-field class="field" appearance="fill">
+        <mat-label>Choose the hall</mat-label>
+        <mat-select formControlName="hallId">
+            <mat-option [value]="hall.id" *ngFor="let hall of halls">
+                {{hall.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="field" appearance="fill">
+        <mat-label>Enter the price</mat-label>
+        <input matInput type="number" min="0" formControlName="price">
+    </mat-form-field>
+
+    <mat-form-field class="field" appearance="fill">
+        <mat-label>Enter the date</mat-label>
+        <input matInput [matDatepickerFilter]="dateFilter" [matDatepicker]="datePicker" formControlName="startDate">
+        <mat-datepicker-toggle matSuffix [for]="datePicker"></mat-datepicker-toggle>
+        <mat-datepicker #datePicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field class="field" appearance="fill">
+        <mat-label>Enter the time</mat-label>
+        <input matInput [ngxTimepicker]="timePicker" formControlName="startTime">
+        <ngx-material-timepicker #timePicker></ngx-material-timepicker>
+    </mat-form-field>
+
+    <mat-form-field class="field" appearance="fill">
+        <mat-label>Choose the language</mat-label>
+        <mat-select formControlName="movieLanguageId">
+            <mat-option [value]=" language.id " *ngFor="let language of movieLanguages ">
+                {{language.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <div style="text-align: center ">
+        <button class="reset-btn " mat-raised-button type="reset ">Reset</button>
+        <button class="submit-btn " mat-raised-button type="submit ">Submit</button>
+    </div>
+
+</form>

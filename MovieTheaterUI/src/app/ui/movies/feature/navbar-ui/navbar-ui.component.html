@@ -1,0 +1,15 @@
+<!-- Navbar -->
+<header>
+    <a href="#" class="logo">
+        <i class='bx bxs-movie'></i> Movies
+    </a>
+    <div class="bx bx-menu" id="menu-icon"></div>
+    <ul class="navbar">
+        <li><a routerLink="/" [routerLinkActiveOptions]="{exact: true}" [routerLinkActive]="['home-active']">Home</a></li>
+        <li><a routerLink="/movies" [routerLinkActive]="['home-active']">Movies</a></li>
+        <!-- <li><a routerLink="/#coming">Coming</a></li> -->
+        <li *ngIf="userLoggedIn"><a routerLink="/home" [routerLinkActive]="['home-active']">User</a></li>
+    </ul>
+    <a *ngIf="!userLoggedIn" routerLink="/auth/login" class="btn">Sign in</a>
+    <a *ngIf="userLoggedIn" (click)="onLogout()" class="btn">Log out</a>
+</header>

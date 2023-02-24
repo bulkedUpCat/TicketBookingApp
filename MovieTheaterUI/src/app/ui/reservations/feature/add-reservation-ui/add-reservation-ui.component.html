@@ -1,0 +1,12 @@
+<div class="container">
+    <app-ticket-ui class="card" *ngFor="let seat of seats" [seat]="seat" [screening]="screening" [hall]="hall" [movie]="movie">
+    </app-ticket-ui>
+</div>
+<div class="price" *ngIf="price != undefined">
+    <p>Price: {{price}}$</p>
+</div>
+<div class="booking" *ngIf="price != undefined">
+    <button (click)="onBook()">Book</button>
+</div>
+
+<app-scroll-bar-ui></app-scroll-bar-ui>

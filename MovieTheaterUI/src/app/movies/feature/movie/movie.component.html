@@ -1,0 +1,88 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="container">
+    <div>
+        <h1>Page of the movie:</h1>
+        <p>{{movie?.title}}</p>
+    </div>
+
+    <div>
+        <h3>Id:</h3>
+        <p>{{movie?.id}}</p>
+    </div>
+    <div>
+        <h3>Date of release:</h3>
+        <p>{{movie?.dateReleased | date: 'M/d/y'}}</p>
+    </div>
+    <div>
+        <h3>Duration:</h3>
+        <p>{{movie?.durationMinutes}} minutes</p>
+    </div>
+    <div>
+        <h3>Budget:</h3>
+        <p>{{movie?.budget}} $</p>
+    </div>
+    <div>
+        <h3>Description:</h3>
+        <p>{{movie?.description}}</p>
+    </div>
+    <div>
+        <h3>Genres:</h3>
+        <p *ngFor="let genre of movie?.genres">
+            {{genre?.name}}
+        </p>
+        <button (click)="onAddGenre()" class="btn">Add genre</button>
+    </div>
+    <div>
+        <h3>Production Countries:</h3>
+        <p *ngFor="let country of movie?.countries">
+            {{country?.name}}
+        </p>
+        <button (click)="onAddCountry()" class="btn">Add production country</button>
+    </div>
+    <div>
+        <h3>Movie languages:</h3>
+        <p *ngFor="let language of movie?.languages">
+            {{language?.name}}
+        </p>
+        <button (click)="onAddLanguage()" class="btn">Add language</button>
+    </div>
+    <div>
+        <h3>Production Company:</h3>
+        <p>
+            {{movie?.productionCompany?.name}}
+        </p>
+        <button (click)="onAddProductionCompany()" class="btn">Add production company</button>
+    </div>
+    <div>
+        <h3>Movie Director:</h3>
+        <p>
+            {{movie?.movieDirector?.name}}
+        </p>
+        <button (click)="onAddMovieDirector()" class="btn">Add movie director</button>
+    </div>
+    <div>
+        <div class="poster">
+            <h3>Poster:</h3>
+            <img [src]="movie?.poster" alt="Movie poster">
+        </div>
+    </div>
+    <div>
+        <h3>Images:</h3>
+    </div>
+
+    <!-- <button mat-button (click)="onToggleScreenings()">Active screenings</button> -->
+    <!-- <div *ngIf="showActiveScreenings"> -->
+    <div class="screenings">
+        <h3>Active screenings:</h3>
+        <div *ngIf="screenings.length != 0">
+            <div *ngFor="let screening of screenings">
+                <a class="screening-link" routerLink="/admin/screenings/{{screening?.id}}">{{screening?.id}}</a>
+                <span>{{screening?.start | date: 'short'}}</span>
+            </div>
+        </div>
+        <button (click)="onAddScreening()" class="btn">Add screening</button>
+        <br>
+        <br>
+    </div>
+</div>

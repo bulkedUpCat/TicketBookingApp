@@ -1,0 +1,95 @@
+<!-- Movie Banner -->
+<!-- Navbar -->
+<div class="container">
+    <app-navbar-ui></app-navbar-ui>
+    <section class="movie-banner">
+        <div class="movie-banner-img">
+            <img [src]="movie?.poster" alt="">
+        </div>
+        <div class="banner-container">
+            <div class="title-container">
+                <div class="title-top">
+                    <div class="movie-title">
+                        <h1>{{movie?.title}}</h1>
+                    </div>
+                    <div class="movie-information">
+                        <span>{{movie?.dateReleased | date: 'MMM d, y'}}</span>
+                        <span>{{movie?.durationMinutes}} minutes</span>
+                        <div class="rating">{{movie?.imDbRating}} <span class="imdb">IMDb</span></div>
+                    </div>
+                    <div class="language">
+                        <span *ngFor="let language of movie?.languages">
+                          {{language.name}}
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="play-btn-container">
+                <div class="play-btn">
+                    <a (click)="onPlayMovie()">
+                        <i class="fa fa-play"></i>
+                    </a>
+                </div>
+            </div> -->
+
+            <!-- <div id="play" class="play">
+                <a (click)="onCloseMovie()" class="close-movie">
+                    <i class="fa fa-times"></i>
+                </a>
+                <div class="play-movie">
+                    <div id="m-video">
+                        <iframe width="900" height="506" src="https://www.youtube.com/embed/u9Mv98Gr5pY" title="VENOM - Official Trailer (HD)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </section>
+
+    <section class="screenings">
+        <strong>Screenings:</strong>
+        <div *ngFor="let screening of sortedScreenings" routerLink="/movies/{{movie?.id}}/screenings/{{screening?.id}}">
+            <p>{{screening?.start | date:'MMM d, h:mm a'}}</p>
+        </div>
+    </section>
+
+    <section class="detailed-info">
+        <div class="title-bottom">
+            <div *ngIf="movie?.genres.length > 0">
+                <strong>Genres:</strong>
+                <div class="genres">
+                    <a *ngFor="let genre of movie?.genres" href="/movies;genres={{genre.name}}">
+                    {{genre.name}}
+                  </a>
+                </div>
+            </div>
+            <div>
+                <strong>Countries:</strong>
+                <div class="countries" *ngIf="movie?.countries">
+                    <a *ngFor="let country of movie?.countries" href="/movies;countries={{country.name}}">
+                      {{country.name}}
+                    </a>
+                </div>
+            </div>
+            <strong>Company:</strong>
+            <div class="company" *ngIf="movie?.productionCompany">
+                <a href="/movies;companies={{movie?.productionCompany.name}}">{{movie?.productionCompany.name}}</a>
+            </div>
+            <!-- <a href="#" class="watch-btn">Watch Trailer</a> -->
+        </div>
+    </section>
+
+    <section class="movie-details">
+        <strong>{{movie?.title}}</strong>
+        <p>{{movie?.description}}</p>
+    </section>
+
+    <section class="images" *ngIf="false">
+        <strong>Images</strong>
+        <div class="images-container">
+            <img src="../../../../../assets/img/venom1.jpg" *ngFor="let i of [1,1,1,1]">
+        </div>
+    </section>
+</div>
+
+<app-scroll-bar-ui></app-scroll-bar-ui>

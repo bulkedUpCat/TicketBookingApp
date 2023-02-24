@@ -1,0 +1,6 @@
+<div class="container">
+    <div class="genre" *ngFor="let productionCompany of productionCompanies">
+        <label>{{productionCompany?.name}}&nbsp;<input [checked]="onChecked(productionCompany?.id)" (change)="onChange($event, productionCompany.id)" name="company" type="radio"></label>
+    </div>
+    <button class="btn" (click)="onSave()">Save</button>
+</div>

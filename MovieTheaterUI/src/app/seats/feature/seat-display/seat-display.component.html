@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="row-container" *ngFor="let row of [].constructor(hall?.rowsNumber); let i = index">
+        {{i + 1}}
+        <div *ngFor="let seat of filterSeats(i + 1)">
+            <div (click)="onSelected(seat)" class="seat" [class.occupied]="seat.status == 2" [class.selected]="seat.status == 1"></div>
+        </div>
+    </div>
+    <div class="price" *ngIf="screening?.price != undefined">
+        <p>Price: {{price}}$</p>
+    </div>
+    <button (click)="onBook()" class="booking">Book</button>
+</div>

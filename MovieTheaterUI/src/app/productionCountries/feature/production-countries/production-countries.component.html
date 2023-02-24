@@ -1,0 +1,11 @@
+<app-nav-bar></app-nav-bar>
+<div class="header">
+    <h1>List of all production countries:</h1>
+</div>
+
+<button (click)="onAddCountry()" class="btn">Add new</button>
+<div class="container">
+    <div class="country" *ngFor="let country of countries">
+        {{country?.name}}
+    </div>
+</div>

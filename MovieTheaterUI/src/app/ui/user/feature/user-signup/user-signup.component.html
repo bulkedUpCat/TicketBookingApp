@@ -1,0 +1,47 @@
+<div class="container">
+    <form [formGroup]="signupForm" (submit)="onSignup()">
+        <div class="login-text">
+            Sign up
+        </div>
+        <div class="input">
+            <input type="text" class="input-item" placeholder="Create your user name" formControlName="userName">
+            <div class="error" *ngIf="submitted && userName.errors">
+                <div class="error" *ngIf="userName.errors['required']">
+                    User name is required
+                </div>
+            </div>
+        </div>
+        <div class="input">
+            <input type="text" class="input-item" placeholder="Enter your email" formControlName="email">
+            <div class="error" *ngIf="submitted && email.errors">
+                <div class="error" *ngIf="email.errors['required']">
+                    Email is required
+                </div>
+            </div>
+        </div>
+        <div class="input">
+            <input type="password" class="input-item" placeholder="Create your password" formControlName="password">
+            <div class="error" *ngIf="submitted && password.errors">
+                <div class="error" *ngIf="password.errors['required']">
+                    Password is required
+                </div>
+            </div>
+        </div>
+        <div class="input">
+            <input type="password" class="input-item" placeholder="Confirm your password" formControlName="confirmPassword">
+            <div class="error" *ngIf="submitted && confirmPassword.errors">
+                <div class="error" *ngIf="confirmPassword.errors['required']">
+                    Password is required
+                </div>
+            </div>
+        </div>
+        <div class="btn">
+            <button type="submit">
+            Sign up
+          </button>
+        </div>
+        <div class="links">
+            <a routerLink="/auth/login">Already have an account?</a>
+        </div>
+    </form>
+</div>

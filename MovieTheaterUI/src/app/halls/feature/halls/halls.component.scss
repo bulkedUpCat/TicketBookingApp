@@ -1,0 +1,39 @@
+.header {
+    background-color: #fff;
+    margin: auto auto;
+    width: 50%;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.header h1 {
+    text-align: center;
+    font-size: 2rem;
+    padding: 2%;
+    color: #000;
+}
+
+.btn {
+    cursor: pointer;
+    padding: .5%;
+    background-color: #e70634;
+    color: #fff;
+    margin-bottom: 2%;
+}
+
+.hall {
+    margin-bottom: 2%;
+}
+
+.hall a {
+    color: #fff;
+}
+
+.delete-btn {
+    border: none;
+    cursor: pointer;
+    font-size: 1.6rem;
+    background-color: transparent;
+    color: rgb(229, 15, 15);
+    margin-left: 2%;
+}

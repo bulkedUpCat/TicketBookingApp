@@ -1,0 +1,11 @@
+<app-nav-bar></app-nav-bar>
+<div class="header">
+    <h1>List of all genres:</h1>
+</div>
+
+<button (click)="onAddGenre()" class="btn">Add new</button>
+<div class="container">
+    <div class="genre" *ngFor="let genre of genres">
+        {{genre?.name}}
+    </div>
+</div>

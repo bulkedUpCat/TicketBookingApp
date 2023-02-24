@@ -1,0 +1,60 @@
+    .header {
+        background-color: #fff;
+        margin: auto auto;
+        width: 50%;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+
+    .header h1 {
+        text-align: center;
+        font-size: 2rem;
+        padding: 2%;
+        color: #000;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    .mat-form-field {
+        font-size: 14px;
+        width: 30%;
+    }
+
+    td,
+    th {
+        width: 25%;
+    }
+
+    .mat-row .mat-cell {
+        border-bottom: 1px solid transparent;
+        border-top: 1px solid transparent;
+        cursor: pointer;
+    }
+
+    .mat-row:hover .mat-cell {
+        cursor: pointer;
+        color: #e70634;
+        border-color: #e70634;
+    }
+
+    .filtering {
+        text-align: center;
+    }
+
+    .action-button {
+        margin: 1%;
+    }
+
+    .add-new {
+        background-color: #e70634;
+    }
+
+    .edit-btn {
+        background-color: #e70634;
+    }
+
+    .delete-btn {
+        background-color: #000;
+    }

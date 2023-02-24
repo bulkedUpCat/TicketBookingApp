@@ -1,0 +1,11 @@
+<app-nav-bar></app-nav-bar>
+<div class="header">
+    <h1>List of all movie languages:</h1>
+</div>
+
+<button (click)="onAddMovieLanguage()" class="btn">Add new</button>
+<div class="container">
+    <div class="language" *ngFor="let language of movieLanguages">
+        {{language?.name}}
+    </div>
+</div>

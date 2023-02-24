@@ -1,0 +1,7 @@
+<div class="container">
+    <div class="language" *ngFor="let language of movieLanguages">
+        <label for="{{language?.name}}">{{language?.name}}</label>
+        <input id="{{language?.name}}" [checked]="checkLanguages(language.name)" type="checkbox" (change)="onLanguageChange($event, language.id)">
+    </div>
+    <button class="btn" (click)="onSave()">Save</button>
+</div>

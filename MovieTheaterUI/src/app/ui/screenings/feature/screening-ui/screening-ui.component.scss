@@ -1,0 +1,38 @@
+.container {
+    margin: 1%;
+}
+
+.header {
+    text-align: center;
+    font-size: 2rem;
+}
+
+.movie-title p {
+    font-size: 2rem;
+}
+
+.booking {
+    text-align: center;
+    margin: 4%;
+}
+
+.booking p {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.booking button {
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    background-color: #ffffff09;
+    border: 2px solid #e70634;
+    cursor: pointer;
+    color: #ffffff;
+    letter-spacing: 1px;
+    transition: all ease 0.3s;
+}
+
+.booking button:hover {
+    background-color: #e70634;
+    transition: all ease 0.3s;
+}

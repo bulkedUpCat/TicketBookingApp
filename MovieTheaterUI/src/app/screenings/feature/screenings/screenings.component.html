@@ -1,0 +1,54 @@
+<h1>List of all screenings:</h1>
+
+<div class="filtering">
+    <mat-form-field fxFlex="40%">
+        <input matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+</div>
+
+<button (click)="onAddNew()" mat-button>Add new</button>
+<table mat-table class="movies-table mat-elevation-z8" [dataSource]="dataSource" matSort>
+
+    <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>
+        <mat-cell *matCellDef="let screening" routerLink="/admin/screenings/{{screening?.id}}">{{screening?.id}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="movieId">
+        <mat-header-cell mat-sort-header *matHeaderCellDef>MovieId</mat-header-cell>
+        <mat-cell *matCellDef="let screening" routerLink="/admin/movies/{{screening?.movieId}}">{{screening?.movieId}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="movieTitle">
+        <mat-header-cell mat-sort-header *matHeaderCellDef>MovieTitle</mat-header-cell>
+        <mat-cell *matCellDef="let screening">{{screening?.movieTitle}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="hallId">
+        <mat-header-cell mat-sort-header *matHeaderCellDef>HallId</mat-header-cell>
+        <mat-cell *matCellDef="let screening">{{screening?.hallId}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="start">
+        <mat-header-cell mat-sort-header="" *matHeaderCellDef>Start</mat-header-cell>
+        <mat-cell *matCellDef="let screening">{{screening?.start | date: 'short'}}</mat-cell>
+    </ng-container>
+
+    <!-- <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+        <mat-cell *matCellDef="let movie">
+            <button class="action-button" mat-raised-button color="primary" focusable="false" (click)="onEditMovie(movie.id)">
+            <i class="fa fa-times mat-icon"></i> Edit
+            </button>
+            <button class="action-button" mat-raised-button color="warn" focusable="false" (click)="onDeleteMovie(movie.id)">
+            <i class="fa fa-times mat-icon"></i> Remove
+            </button>
+        </mat-cell>
+    </ng-container> -->
+
+    <mat-header-row *matHeaderRowDef="displayedColumns "></mat-header-row>
+
+    <mat-row *matRowDef="let row; columns: displayedColumns "></mat-row>
+
+</table>
+<mat-paginator #paginator [pageSizeOptions]="[3, 5, 10]" showFirstLastButtons></mat-paginator>

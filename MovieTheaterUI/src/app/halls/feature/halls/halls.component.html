@@ -1,0 +1,15 @@
+<app-nav-bar></app-nav-bar>
+<div class="header">
+    <h1>List of all halls:</h1>
+</div>
+
+<button (click)="onAddHall()" class="btn">Add new</button>
+
+<div class="container">
+    <div *ngFor="let hall of halls" class="hall">
+        <span>
+          <a class="hall-name" routerLink="{{hall.id}}">{{hall.name}}</a>
+          <button class="delete-btn" (click)="onDeleteHall(hall.id)">&times;</button>
+        </span>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+<!-- Scroll Progress Bar
+<app-scroll-bar-ui></app-scroll-bar-ui> -->
+
+
+<app-navbar-ui></app-navbar-ui>
+
+<!-- Home -->
+<swiper [config]="config" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+    <ng-template swiperSlide *ngFor="let movie of top3movies">
+        <div class="container">
+            <img [src]="movie?.poster" alt="">
+            <div class="home-text">
+                <span>Marvel Universe</span>
+                <h1>{{movie?.title}}</h1>
+                <a routerLink="/movies/{{movie?.id}}" class="btn">Book now</a>
+                <!-- <a href="#" class="play">
+                    <i class='bx bx-play'></i>
+                </a> -->
+            </div>
+        </div>
+    </ng-template>
+</swiper>
+
+<!-- Movies -->
+<section class="movies">
+    <h2 class="heading">Coming out this week</h2>
+    <!-- Container -->
+    <div class="movie-container">
+        <div class="box" *ngFor="let movie of comingOutThisWeekMovies">
+            <div class="box-img" routerLink="movies/{{movie?.id}}">
+                <img [src]="movie?.poster" alt="">
+            </div>
+            <h3>{{movie?.title}}</h3>
+            <span>{{movie?.durationMinutes}} min</span>
+        </div>
+    </div>
+</section>
+
+<!-- Coming -->
+<section class="coming" id="coming">
+    <h2 class="heading">Coming Soon</h2>
+    <!-- Container -->
+    <swiper [config]="configComing" (swiper)="onSwiper($event)" (slideChange)="onSlideChange()">
+        <ng-template swiperSlide *ngFor="let movie of comingSoonMovies" class="coming-container">
+            <div class="box">
+                <div class="box-img" style="transform: none" routerLink="movies/{{movie?.id}}">
+                    <img [src]="movie?.poster" alt="">
+                </div>
+                <h3>{{movie?.title}}</h3>
+                <!-- <span>120 min | Action</span> -->
+            </div>
+        </ng-template>
+    </swiper>
+</section>
+
+<app-scroll-bar-ui></app-scroll-bar-ui>

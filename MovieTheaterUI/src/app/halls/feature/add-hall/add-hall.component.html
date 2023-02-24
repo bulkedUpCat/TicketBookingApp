@@ -1,0 +1,28 @@
+<form class="container" (submit)="onSubmit()" [formGroup]="hallForm">
+
+    <mat-form-field class="field" appearance="fill">
+        <mat-label>Enter the name</mat-label>
+        <input matInput formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field class="field" appearance="fill">
+        <mat-label>Enter the number of seats</mat-label>
+        <input type="number" matInput formControlName="seatsNumber">
+    </mat-form-field>
+
+    <mat-form-field class="field" appearance="fill">
+        <mat-label>Enter the number of seats in one row</mat-label>
+        <input type="number" matInput formControlName="seatsInRow">
+    </mat-form-field>
+
+    <mat-form-field class="field" appearance="fill">
+        <mat-label>Enter the price of seats</mat-label>
+        <input type="number" matInput formControlName="seatPrice">
+    </mat-form-field>
+
+    <div style="text-align: center">
+        <button class="reset-btn" mat-raised-button type="reset">Reset</button>
+        <button class="submit-btn" mat-raised-button type="submit">Submit</button>
+    </div>
+
+</form>

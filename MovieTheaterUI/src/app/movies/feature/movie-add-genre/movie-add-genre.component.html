@@ -1,0 +1,7 @@
+<div class="container">
+    <div class="genre" *ngFor="let genre of genres">
+        <label for="{{genre?.name}}">{{genre?.name}}</label>
+        <input id="{{genre?.name}}" [checked]="checkGenres(genre.name)" type="checkbox" (change)="onGenreChange($event, genre.id)">
+    </div>
+    <button class="btn" (click)="onSave()">Save</button>
+</div>

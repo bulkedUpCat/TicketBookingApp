@@ -1,0 +1,38 @@
+.container {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 15px;
+    row-gap: 15px;
+    margin-top: 2%;
+}
+
+.price {
+    margin: .5% 0;
+}
+
+.price p {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.booking {
+    text-align: center;
+}
+
+.booking button {
+    padding: 10px 30px;
+    font-size: 1.5rem;
+    background-color: #ffffff09;
+    border: 2px solid #e70634;
+    cursor: pointer;
+    color: #ffffff;
+    letter-spacing: 1px;
+    transition: all ease 0.3s;
+}
+
+.booking button:hover {
+    background-color: #e70634;
+    transition: all ease 0.3s;
+}
